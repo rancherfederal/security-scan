@@ -281,7 +281,7 @@ target_mapping:
     - "node"
     - "managedservices"
     - "policies"
-  "aks-1.0":	
+  "aks-1.0":
     - "node"
   "rke2-cis-1.6-hardened":
     - "master"
@@ -302,6 +302,18 @@ target_mapping:
     - "etcd"
     - "policies"
   "k3s-cis-1.6-permissive":
+    - "master"
+    - "node"
+    - "controlplane"
+    - "etcd"
+    - "policies"
+  "stig-kubernetes-v1R4":
+    - "master"
+    - "node"
+    - "controlplane"
+    - "etcd"
+    - "policies"
+  "stig-rke2-v1":
     - "master"
     - "node"
     - "controlplane"

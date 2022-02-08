@@ -1,22 +1,22 @@
-security-scan
-========
+# security-scan
+
 NOTE: This repo is currently being merged with the [cis-operator](https://github.com/rancher/cis-operator) repo to track security scanned and CIS related issues. Please submit any new inquiries in the [cis-operator](https://github.com/rancher/cis-operator) repo.
 
-This repo has all the stuff needed for running CIS scan on RKE clusters.
+This repo has all the stuff needed for running CIS and STIG scans on RKE clusters.
 
 Multi-purpose repo:
 - Packaging for all the components needed for CIS scan (sonobuoy, kube-bench)
 - kube-bench-summarizer
 - plugin script for sonobuoy tool (a different script is passed using command)
 
-The corresponding docker image (rancher/security-scan) is used in the system charts.
+The corresponding docker image (rancherfederal/security-scan) is used in the system charts.
 
 ## Building
 `make`
 
 Tag the image to personal docker hub repo
 
-`docker tag rancher/security-scan:<MAKE TAG OUTPUT> <DOCKER_HUB_USER>/security-scan:dev`
+`docker tag rancherfederal/security-scan:<MAKE TAG OUTPUT> <DOCKER_HUB_USER>/security-scan:dev`
 
 Push docker tag
 
