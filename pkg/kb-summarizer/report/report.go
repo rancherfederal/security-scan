@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"sort"
 
-	"github.com/rancher/security-scan/pkg/kb-summarizer/summarizer"
+	"github.com/rancherfederal/security-scan/pkg/kb-summarizer/summarizer"
 	"github.com/sirupsen/logrus"
 )
 
