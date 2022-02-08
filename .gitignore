@@ -6,3 +6,4 @@
 *.swp
 /cmd/kb-summarizer/kb-summarizer
 /.idea
+.dapper.tmp
