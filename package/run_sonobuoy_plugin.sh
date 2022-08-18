@@ -51,6 +51,13 @@ RESULTS_DIR="${RESULTS_DIR:-/tmp/results}"
 ERROR_LOG_FILE="${RESULTS_DIR}/error.log"
 LOG_DIR="${RESULTS_DIR}/logs"
 JOURNAL_LOG="${JOURNAL_LOG:-/var/log/journal}"
+
+# Handle read-only issue in custom benchmark mounts
+if [[ "$CONFIG_DIR" != "/etc/kube-bench/cfg" ]]; then
+  cp -r "$CONFIG_DIR" /tmp/cfg
+  CONFIG_DIR=/tmp/cfg
+fi
+
 if [[ "$(journalctl -D $JOURNAL_LOG --lines=0 2>&1 | grep -s 'No such file or directory' | wc -l)" -gt 0 ]]; then
   JOURNAL_LOG=/run/log/journal
   find $CONFIG_DIR -name '*.yaml' | xargs -n1 sed -i 's|/var/log/journal|/run/log/journal|'
